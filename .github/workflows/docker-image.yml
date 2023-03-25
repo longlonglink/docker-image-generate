@@ -1,7 +1,7 @@
 name: Docker Image CI
 env:
   APP_NAME: ubuntu-glinet-bulid-axt1800
-  DOCKERHUB_REPO: bulidaxt
+  DOCKERHUB_REPO: loophank/ubuntu-glinet-bulid-axt1800
 on:
   push:
     branches: [ "main" ]
@@ -34,7 +34,6 @@ jobs:
         with:
           context: .
           platforms: |
-            linux/386
             linux/amd64
           push: true
           build-args: |
