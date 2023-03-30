@@ -8,4 +8,7 @@ RUN  apt update \
      &&  python3 setup.py -c configs/config-wlan-ap.yml \
      &&  cd wlan-ap/openwrt \
      &&  git clone https://github.com/gl-inet/glinet4.x.git
+RUN  cp ./glinet4.x/pkg_config/gl_pkg_config_ax1800.mk  ./glinet4.x/ipq60xx/gl_pkg_config.mk \
+     && cp ./glinet4.x/pkg_config/glinet_depends_ax1800.yml  ./profiles/glinet_depends.yml \
+     && ./scripts/gen_config.py glinet_depends
      
